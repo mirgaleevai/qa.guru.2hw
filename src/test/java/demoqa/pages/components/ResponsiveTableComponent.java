@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class ResponsiveTableComponent {
 
     public void checkResponciveTableValue(String field, String result) {
+        //123
         $(".table-responsive").$(byText(field)).parent().shouldHave(text(result));
 
     }
