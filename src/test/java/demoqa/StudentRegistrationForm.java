@@ -1,39 +1,40 @@
 package demoqa;
 
-import demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
+
+import static demoqa.utils.RandomData.*;
 
 public class StudentRegistrationForm extends TestBase {
 
-    RegistrationPage registrationPage = new RegistrationPage();
     @Test
     void registrationFormCheck() {
+
         registrationPage.openPage()
                 .closeAdds()
-                .setFirstName("Oleg")
-                .setLastName("Olegov")
-                .setUserEmail("Olegov@mail.ru")
-                .setGender("Male")
-                .setUserNumber("8888888888")
-                .setBirthDay("25", "June", "1991")
-                .setSubjectInput("English")
-                .setHobby("Sports")
-                .uploadPicture("Wojak.png")
-                .setCurrentAddress("Pushkina 123")
-                .setStateAndCity("NCR", "Delhi")
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(email)
+                .setGender(gender)
+                .setUserNumber(phoneNumber)
+                .setBirthDay(day, month, year)
+                .setSubjectInput(subject)
+                .setHobby(hobby)
+                .uploadPicture(filename)
+                .setCurrentAddress(address)
+                .setStateAndCity(state, city)
                 .clickSubmitButton()
                 .checkHeaderValue("Thanks for submitting the form")
 
-                .resultTableCheck("Student Name","Oleg Olegov")
-                .resultTableCheck("Student Email", "Olegov@mail.ru")
-                .resultTableCheck("Gender", "Male")
-                .resultTableCheck("Mobile", "8888888888")
-                .resultTableCheck("Date of Birth", "25 June,1991")
-                .resultTableCheck("Subjects", "English")
-                .resultTableCheck("Hobbies", "Sports")
-                .resultTableCheck("Picture", "Wojak.png")
-                .resultTableCheck("Address", "Pushkina 123")
-                .resultTableCheck("State and City", "NCR Delhi")
+                .resultTableCheck("Student Name", firstName + " " + lastName)
+                .resultTableCheck("Student Email", email)
+                .resultTableCheck("Gender", gender)
+                .resultTableCheck("Mobile", phoneNumber)
+                .resultTableCheck("Date of Birth", day + " " + month + "," + year)
+                .resultTableCheck("Subjects", subject)
+                .resultTableCheck("Hobbies", hobby)
+                .resultTableCheck("Picture", filename)
+                .resultTableCheck("Address", address)
+                .resultTableCheck("State and City", state + " " + city)
 
                 .closeModalWindowButton();
 
