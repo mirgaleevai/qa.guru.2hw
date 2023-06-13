@@ -5,6 +5,25 @@ import org.junit.jupiter.api.Test;
 import static demoqa.utils.RandomData.*;
 
 public class StudentRegistrationForm extends TestBase {
+    public String firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            email = faker.internet().emailAddress(),
+            gender = faker.options().option("Male", "Female", "Other"),
+            state = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan"),
+            city = getCityForState(state),
+            phoneNumber = faker.phoneNumber().subscriberNumber(10),
+            month = faker.options().option("January", "February", "March", "April", "May",
+                    "June", "July", "August", "September", "October", "November", "December"),
+            subject = faker.options().option("Math", "English", "Chemistry", "Civics",
+                    "Computer Science", "Arts", "Physics", "Economics"),
+            hobby = faker.options().option("Sports", "Reading", "Music"),
+            filename = "Wojak.png",
+            address = faker.address().fullAddress();
+
+    public int chooseDay = faker.number().numberBetween(1, 28),
+            ChooseYear = faker.number().numberBetween(1980, 2005);
+    public String day = String.valueOf(chooseDay),
+            year = String.valueOf(ChooseYear);
 
     @Test
     void registrationFormCheck() {
