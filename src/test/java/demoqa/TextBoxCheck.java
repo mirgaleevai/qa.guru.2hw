@@ -1,6 +1,7 @@
 package demoqa;
 
 import demoqa.pages.TextBoxPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class TextBoxCheck extends TestBase {
@@ -9,6 +10,7 @@ public class TextBoxCheck extends TestBase {
 
 
     @Test
+    @Tag("TextBox")
     void TextBoxTest() {
         textBoxPage.openTextBoxPage()
                 .closeAdds()
