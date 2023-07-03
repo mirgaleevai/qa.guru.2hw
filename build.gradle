@@ -44,6 +44,6 @@ test {
 
 task registrationForm_test(type: Test) {
     useJUnitPlatform {
-        includeTags("RegistrationForm")
+        includeTags("RegistrationFormRemote")
     }
 }
