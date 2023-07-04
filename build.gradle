@@ -38,6 +38,12 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+tasks.withType(Test) {
+    System.getProperty("browser", "chrome")
+    System.getProperty("version", "101")
+    System.getProperty("windowSize", "1920x1080")
+}
+
 test {
     useJUnitPlatform()
 }
