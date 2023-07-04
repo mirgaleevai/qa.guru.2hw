@@ -18,7 +18,8 @@ public class TestBaseRemote {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.remote = System.getProperty("remoteBrowser");
+        Configuration.remote = System.getProperty("remoteBrowser", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.remote = System.getProperty("url", "https://demoqa.com");
         Configuration.remote = System.getProperty("browser", "chrome");
         Configuration.remote = System.getProperty("browserVersion", "100.0");
         Configuration.remote = System.getProperty("browserSize", "1920x1080");
