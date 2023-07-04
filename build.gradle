@@ -39,9 +39,7 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
-    System.getProperty("browser", "chrome")
-    System.getProperty("version", "101")
-    System.getProperty("windowSize", "1920x1080")
+    systemProperties(System.getProperties())
 }
 
 test {
