@@ -19,14 +19,14 @@ public class TestBaseRemote {
     @BeforeAll
     static void beforeAll() {
         Configuration.remote = System.getProperty("remoteBrowser", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
-        Configuration.remote = System.getProperty("url", "https://demoqa.com");
-        Configuration.remote = System.getProperty("browser", "chrome");
-        Configuration.remote = System.getProperty("browserVersion", "100.0");
-        Configuration.remote = System.getProperty("browserSize", "1920x1080");
+        Configuration.baseUrl = System.getProperty("url", "https://demoqa.com");
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
+        Configuration.browserSize = System.getProperty("browserSize", "1024x768");
         SelenideLogger.addListener("allure", new AllureSelenide());
 //        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.pageLoadStrategy = "eager";
+//        Configuration.browserSize = "1920x1080";
+//        Configuration.pageLoadStrategy = "eager";
 //        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
